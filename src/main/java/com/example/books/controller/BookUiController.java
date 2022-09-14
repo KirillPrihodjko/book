@@ -18,6 +18,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/ui")
 public class BookUiController {
+
     @Autowired
     private BookService bookService;
 
@@ -35,12 +36,13 @@ public class BookUiController {
         model.addAttribute("book", new BookEntity());
         return "addBook";
     }
+
     @GetMapping("/books/{page}")
     public String findAllPerson(Model model, @PathVariable int page) {
-        List<BookEntity> books = bookService.getAllBooksWithPagination(page-1);
+        List<BookEntity> books = bookService.getAllBooksWithPagination(page - 1);
         log.info("Received find books request");
         model.addAttribute("books", books);
-        model.addAttribute("nextPage",Integer.toString(page+1));
+        model.addAttribute("nextPage", Integer.toString(page + 1));
         return "books";
     }
 }

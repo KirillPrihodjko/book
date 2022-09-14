@@ -13,11 +13,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/rest")
 public class BookRestController {
+
     @Autowired
     private BookService bookService;
+
     @GetMapping("/books/{page}")
     public List<BookEntity> findAllPerson(@PathVariable int page) {
-        List<BookEntity> books = bookService.getAllBooksWithPagination(page-1);
-        return books;
+        return bookService.getAllBooksWithPagination(page - 1);
     }
 }

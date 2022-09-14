@@ -11,16 +11,16 @@ import java.util.List;
 
 @Service
 public class BookService {
+
     @Autowired
     BookRepository bookRepository;
-    public BookEntity saveBook(BookEntity bookEntity){
-        return bookRepository.save(bookEntity);
+
+    public void saveBook(BookEntity bookEntity) {
+        bookRepository.save(bookEntity);
     }
 
-    public List<BookEntity> getAllBooksWithPagination(int numberPage){
-        Pageable pageable = PageRequest.of(numberPage, 10);
+    public List<BookEntity> getAllBooksWithPagination(int numberPage) {
+        Pageable pageable = PageRequest.of(numberPage, 50);
         return bookRepository.findAll(pageable).toList();
     }
-
-
 }

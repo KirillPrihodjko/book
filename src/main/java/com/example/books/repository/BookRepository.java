@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BookRepository extends PagingAndSortingRepository<BookEntity, Integer> {
 
-   Page<BookEntity> findAll(Pageable pageable);
+    Page<BookEntity> findAll(Pageable pageable);
 }
