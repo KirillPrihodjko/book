@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Find Person</title>
+    <title>Add Book</title>
 </head>
 <body>
-<h1>Find Person</h1>
+<h1>Add Book</h1>
 <form action="#" th:action="@{/ui/addBook}" th:object="${book}" method="post">
     <p>Author: <label>
         <input type="text" th:field="*{author}"/>
@@ -16,7 +16,7 @@
     <p>Number pages: <label>
         <input type="text" th:field="*{numberPages}"/>
     </label></p>
-    <p><input type="submit" value="Find"/> <input type="reset" value="Reset"/></p>
+    <p><input type="submit" value="Add"/> <input type="reset" value="Reset"/></p>
 </form>
 </body>
 </html>
