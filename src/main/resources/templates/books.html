@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Persons List</title>
+</head>
+<body>
+<span style="display: none" id="numberPage" th:text="${nextPage}"></span>
+<table>
+    <thead>
+    <tr>
+        <th> Id</th>
+        <th> Author</th>
+        <th> Name</th>
+        <th> Number Pages</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book:${books}">
+        <td><span th:text="${book.id}"> Id </span></td>
+        <td><span th:text="${book.author}"> Author </span></td>
+        <td><span th:text="${book.name}"> Name </span></td>
+        <td><span th:text="${book.numberPages}"> Number Pages </span></td>
+    </tr>
+    </tbody>
+
+</table>
+<button id="btn">NextPage</button>
+</body>
+<script>
+
+    /*document.querySelector("#btn").addEventListener('click',function(){
+        let pageNumber = document.querySelector("#numberPage").textContent;
+        console.log(pageNumber);
+        window.location.href = "/ui/books/"+pageNumber;
+    })*/
+   window.addEventListener('scroll',function(){
+        let pageNumber = document.querySelector("#numberPage").textContent;
+        console.log(pageNumber);
+        window.location.href = "/ui/books/"+pageNumber;
+    })
+</script>
+</html>

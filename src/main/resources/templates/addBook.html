@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Person</title>
+</head>
+<body>
+<h1>Find Person</h1>
+<form action="#" th:action="@{/ui/addBook}" th:object="${book}" method="post">
+    <p>Author: <label>
+        <input type="text" th:field="*{author}"/>
+    </label></p>
+    <p>Name: <label>
+        <input type="text" th:field="*{name}"/>
+    </label></p>
+    <p>Number pages: <label>
+        <input type="text" th:field="*{numberPages}"/>
+    </label></p>
+    <p><input type="submit" value="Find"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>
